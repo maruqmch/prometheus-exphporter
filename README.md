@@ -1,4 +1,4 @@
-Prometheus Exphporter
+Prometheus Exporter  for S77 , wanrouter , E1, T1, asterisk 
 ===
 
 ## Installation
