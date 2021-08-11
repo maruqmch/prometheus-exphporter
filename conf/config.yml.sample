@@ -2,14 +2,14 @@
 collectors:
   # Uncomment and configure collectors as needed
   enabled:
-    #- Arrakis\Exphporter\Collector\Wanpipess7
+    - Arrakis\Exphporter\Collector\Wanpipess7Status
     #- Arrakis\Exphporter\Collector\BorgRepository
     #- Arrakis\Exphporter\Collector\CommandLineCount
     #- Arrakis\Exphporter\Collector\DiskUsage
     #- Arrakis\Exphporter\Collector\FindCount
     #- Arrakis\Exphporter\Collector\FindCountByDate
     #- Arrakis\Exphporter\Collector\Livebox
-    - Arrakis\Exphporter\Collector\OsRelease
+    $- Arrakis\Exphporter\Collector\OsRelease
     #- Arrakis\Exphporter\Collector\Packages
     #- Arrakis\Exphporter\Collector\RaspberryPiHealth
     #- Arrakis\Exphporter\Collector\V4l2ctl
@@ -25,6 +25,16 @@ collectors:
           path: /var/lib/borg-backup/repositories/music
           passphrase_file: /root/.borg-backup-passphrase
 
+    Arrakis\Exphporter\Collector\Wanpipess7Status:
+      commands:
+        - name: 'wanpipe1'
+          command: 'wanrouter status| grep TE1| grep wanpipe1| grep Connected'
+        - name: 'wanpipe2'
+          command: 'wanrouter status| grep TE1| grep wanpipe2| grep Connected'
+        - name: 'wanpipe3'
+          command: 'wanrouter status| grep TE1| grep wanpipe3| grep Connected'
+        - name: 'wanpipe4'
+          command: 'wanrouter status| grep TE1| grep wanpipe4| grep Connected'
     Arrakis\Exphporter\Collector\CommandLineCount:
       commands:
         - name: 'Processes count'
