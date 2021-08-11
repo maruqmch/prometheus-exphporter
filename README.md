@@ -1,4 +1,4 @@
-Prometheus Exporter  for S77 , wanrouter , E1, T1, asterisk 
+Prometheus Exporter  for S77 , signoma wanrouter , E1, T1, asterisk 
 ===
 
 ## Installation
