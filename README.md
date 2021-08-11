@@ -5,7 +5,7 @@ Prometheus Exporter  for S77 , wanrouter , E1, T1, asterisk
 
 1. Clone project:
 ```shell
-git clone https://nanawel-gitlab.dyndns.org/anael/prometheus-exphporter.git
+git clone https://github.com/maruqmch/prometheus-exporter-ss7-wanrouter-e1-t1.git
 # or git clone git@nanawel-gitlab.dyndns.org:anael/prometheus-exphporter.git
 cd prometheus-exphporter
 ```
