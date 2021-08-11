@@ -2,6 +2,7 @@
 collectors:
   # Uncomment and configure collectors as needed
   enabled:
+    #- Arrakis\Exphporter\Collector\Wanpipess7
     #- Arrakis\Exphporter\Collector\BorgRepository
     #- Arrakis\Exphporter\Collector\CommandLineCount
     #- Arrakis\Exphporter\Collector\DiskUsage
