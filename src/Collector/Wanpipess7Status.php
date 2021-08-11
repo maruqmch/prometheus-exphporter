@@ -9,7 +9,7 @@ class Wanpipess7Status extends AbstractCollector
     public function collect(CollectorRegistry $registry)
     {
         $registry->createGauge(
-            'command_line_count',
+            'wanrouter_ss7_status',
             array_keys($this->getGaugeLabels(null, null)),
             null,
             null,
@@ -38,16 +38,19 @@ class Wanpipess7Status extends AbstractCollector
                 $output,
                 $rc
             );
-            
-            $registry->getGauge('command_line_count_return_code')
+
+            if($rc==1)
+            $rc=0;
+            elseif($rc==0)
+            $rc=1;
+
+            $registry->getGauge('wanrouter_ss7_status')
                 ->set($rc, $this->getGaugeLabels($commandConfig['name'], $commandConfig['command']));
-            
+           if ($rc && !$output)
+ 
             if ($rc && empty($commandConfig['ignore_errors'])) {
                 throw new Exception('The command returned an error code: ' . $rc);
             }
-
-            $registry->getGauge('command_line_count')
-                ->set(count($output), $this->getGaugeLabels($commandConfig['name'], $commandConfig['command']));
         }
     }
 
